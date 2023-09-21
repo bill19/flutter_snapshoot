@@ -1,19 +1,20 @@
 
 import 'package:flutter_snapshoot/time_stamp.dart';
-
+import 'dart:io' show Platform, stdout;
 class snapshoot{
 
   ///普通模板数据
   static String demo1({String ? title}){
 
-    String time = TimeStamp().dateToString(TimeStamp().nowTimeToString());
+    String time = TimeStamp().nowTimeToString();
+    String hostname = Platform.environment['USER'].toString();
 
     String s = 'import \'package\:flutter\/material.dart\';' +'\n'+
         '\n'+
         '\n'+
         '///''\n'+
         '/// @date:${time}''\n'+
-        '/// @author:''\n'+
+        '/// @author:${hostname}''\n'+
         '/// @des:''\n'+
             '///'
         '\n'+
@@ -49,7 +50,9 @@ class snapshoot{
   ///列表模板数据
   static String demoList({String ? title}){
 
-    String time = TimeStamp().dateToString(TimeStamp().nowTimeToString());
+    String time = TimeStamp().nowTimeToString();
+    String hostname = Platform.environment['USER'].toString();
+
 
     String s =
         'import \'dart:core\';'+'\n'+
@@ -65,7 +68,7 @@ class snapshoot{
         '\n'+
         '///''\n'+
         '/// @date:${time}''\n'+
-        '/// @author:''\n'+
+        '/// @author:${hostname}''\n'+
         '/// @des:''\n'+
         '///'
             '\n'+
