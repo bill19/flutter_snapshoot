@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_snapshoot/s_selected_wgt.dart';
-import 'package:flutter_snapshoot/use_document.dart';
 import 'package:flutter_snapshoot/snapshoot.dart';
 import 'package:get/get.dart';
 
@@ -145,7 +144,7 @@ class _MyHomePageState extends State<MyHomePage> {
               callback: () {
                 if (mounted) {
                   setState(() {
-                    _showResString = snapshoot.demo1(title: _newValue ?? '');
+                    _showResString = snapshoot.demoList(title: _newValue ?? '');
                     controller..text = _showResString;
                   });
                 }

@@ -36,7 +36,8 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   get:
-  path_provider: 2.0.14
+  #时间戳
+  date_format: 2.0.7
 
 dev_dependencies:
   flutter_test:
