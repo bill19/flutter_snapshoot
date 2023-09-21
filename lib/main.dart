@@ -92,7 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   String _showResString = '';
-
+  int _selectIndex = 0;
   @override
   Widget _leftWidget() {
     return Container(
@@ -105,13 +105,16 @@ class _MyHomePageState extends State<MyHomePage> {
           SSelectWidget(
             beans: beans ?? [],
             callBack: (bean) {
-              beans.forEach((element) {
+              for (var i = 0; i < beans.length; ++i) {
+                var element = beans[i];
                 if (bean.name == element.name) {
                   element.select = true;
+                  _selectIndex = i;
                 } else {
                   element.select = false;
                 }
-              });
+              }
+
               print('bean =  =${bean.toString()}');
               if (mounted) {
                 setState(() {});
@@ -144,7 +147,15 @@ class _MyHomePageState extends State<MyHomePage> {
               callback: () {
                 if (mounted) {
                   setState(() {
-                    _showResString = snapshoot.demoList(title: _newValue ?? '');
+                    if (_selectIndex == 0) {
+                      _showResString = snapshoot.demo1(title: _newValue ?? '');
+                    }
+                    if (_selectIndex == 1) {
+                      _showResString = snapshoot.demoList(title: _newValue ?? '');
+                    }
+                    if (_selectIndex == 2) {
+                      _showResString = snapshoot.demoList(title: _newValue ?? '');
+                    }
                     controller..text = _showResString;
                   });
                 }
