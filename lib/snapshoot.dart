@@ -10,6 +10,9 @@ class snapshoot{
     String hostname = Platform.environment['USER'].toString();
 
     String s = 'import \'package\:flutter\/material.dart\';' +'\n'+
+        'import \'package\:bruno\/bruno.dart\';'+'\n'+
+        'import \'../../common/UI/res_color.dart\';' +'\n'+
+    'import \'../../common/common_widget/vr_lead.dart\';' +'\n'+
         '\n'+
         '\n'+
         '///''\n'+
@@ -34,14 +37,31 @@ class snapshoot{
     '}'+'\n'+
     '\n'+
     '@override'+'\n'+
-    'Widget build(BuildContext context) {'+'\n'+
-    'return Scaffold('+'\n'+
-    'appBar: AppBar('+'\n'+
-    'title: Text(\'\'),'+'\n'+
-    '),'+'\n'+
-    'body: Container());'+'\n'+
+        'Widget build(BuildContext context) {'+'\n'+
+      'return Scaffold('+'\n'+
+        'resizeToAvoidBottomInset: false,'+'\n'+
+        'appBar: BrnAppBar('+'\n'+
+         ' brightness: Brightness.light,'+'\n'+
+          'leading: VRBackWidget.getBack(onTap: () {'+'\n'+
+            'Navigator.pop(context);'+'\n'+
+          '}),'+'\n'+
+          'leadingWidth: 40,'+'\n'+
+          'title: \'xxxx\','+'\n'+
+        '),'+'\n'+
+        'body: WillPopScope('+'\n'+
+          'onWillPop: () async {'+'\n'+
+            'return true;'+'\n'+
+          '},'+'\n'+
+          'child: Container('+'\n'+
+              'color: GlobalColor.color_white,'+'\n'+
+              'padding: EdgeInsets.only('+'\n'+
+                'top: 16,'+'\n'+
+              '),'+'\n'+
+              'child: Container()),'+'\n'+
+        '),'+'\n'+
+      ');'+'\n'+
     '}'+'\n'+
-    '}'+'\n';
+        '}';
 
     return s;
   }
