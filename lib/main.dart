@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_snapshoot/s_selected_wgt.dart';
 import 'package:flutter_snapshoot/snapshoot.dart';
-import 'package:get/get.dart';
-
 import 's_selected_bean.dart';
 
 void main() {
-  runApp(GetMaterialApp(home: MyApp()));
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
